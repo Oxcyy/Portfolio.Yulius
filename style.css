@@ -1,0 +1,390 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+ 
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
+  line-height: 1.7;
+}
+
+
+.merah {
+  color: #e63946;
+}
+
+.dot {
+  color: #e63946;
+  font-size: 1.5rem;
+}
+
+
+.navbar {
+  background-color: rgba(13, 17, 23, 0.92);
+
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+  padding: 0.9rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  letter-spacing: -0.5px;
+}
+
+.nav-link {
+  color: #8b949e !important;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.2s;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(230, 57, 70, 0.1);
+}
+
+
+.hero-section {
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #0d1117;
+
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.hero-salam {
+  font-size: 1rem;
+  color: #e63946;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.hero-nama {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero-role {
+  font-size: 1.1rem;
+  color: #f4a261;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-deskripsi {
+  color: #8b949e;
+  font-size: 0.95rem;
+  max-width: 500px;
+}
+
+
+.btn-merah {
+  background-color: #e63946;
+  color: #fff;
+  border: 2px solid #e63946;
+  padding: 0.6rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-merah:hover {
+  background-color: transparent;
+  color: #e63946;
+}
+
+.btn-outline-merah {
+  background-color: transparent;
+  color: #e6edf3;
+  border: 2px solid rgba(230, 57, 70, 0.4);
+  padding: 0.6rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.btn-outline-merah:hover {
+  border-color: #e63946;
+  color: #e63946;
+}
+
+
+.foto-profil {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;         
+  border-radius: 50%;          
+  border: 4px solid #e63946;  
+  box-shadow: 0 0 30px rgba(230, 57, 70, 0.25);
+}
+
+
+.about-section {
+  background-color: #161b22;
+  padding: 90px 0;
+}
+
+
+.label-section {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #e63946;
+  margin-bottom: 0.3rem;
+}
+
+.judul-section {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+
+.card-custom {
+  background-color: #1c2631;
+  border-radius: 14px;
+  padding: 1.8rem;
+  border: 1px solid rgba(230, 57, 70, 0.1);
+  height: 100%;
+ 
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.judul-card {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f4a261;
+  margin-bottom: 1rem;
+}
+
+.text-muted-custom {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+
+.info-box {
+  background-color: rgba(230, 57, 70, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid #e63946;
+}
+
+.info-label {
+  font-size: 0.7rem;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-nilai {
+  font-size: 0.85rem;
+  color: #e6edf3;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+.skill-nama {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #e6edf3;
+}
+
+.skill-persen {
+  font-size: 0.82rem;
+  color: #e63946;
+  font-weight: 600;
+}
+
+
+.progress-bar {
+  background: linear-gradient(90deg, #e63946, #f4a261);
+  border-radius: 20px;
+}
+
+
+.exp-card {
+  background-color: rgba(230, 57, 70, 0.06);
+  border-radius: 10px;
+  padding: 1.2rem;
+  border: 1px solid rgba(230, 57, 70, 0.15);
+  height: 100%;
+  transition: border-color 0.3s;
+}
+
+.exp-card:hover {
+  border-color: rgba(230, 57, 70, 0.5);
+}
+
+.exp-periode {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #e63946;
+  text-transform: uppercase;
+}
+
+.exp-posisi {
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0.3rem 0 0.1rem;
+  font-size: 0.95rem;
+}
+
+.exp-tempat {
+  font-size: 0.82rem;
+  color: #f4a261;
+  margin: 0;
+}
+
+.exp-desc {
+  font-size: 0.8rem;
+  color: #8b949e;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+
+.cert-section {
+  background-color: #0d1117;
+  padding: 90px 0;
+}
+
+
+.cert-card {
+  background-color: #1c2631;
+  border-radius: 14px;
+  border: 1px solid rgba(230, 57, 70, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(230, 57, 70, 0.45);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+.cert-ikon {
+  background: linear-gradient(135deg, #e63946, #c0392b);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.cert-isi {
+  padding: 1.3rem;
+  flex: 1;
+}
+
+.cert-kategori {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f4a261;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.cert-judul {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.cert-penerbit,
+.cert-tanggal {
+  font-size: 0.8rem;
+  color: #8b949e;
+  margin-bottom: 0.2rem;
+}
+
+.cert-bawah {
+  padding: 0.7rem 1.3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.badge-verified {
+  font-size: 0.72rem;
+  color: #2ecc71;
+  font-weight: 600;
+  background-color: rgba(46, 204, 113, 0.1);
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+.footer {
+  background-color: #161b22;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  color: #8b949e;
+  border-top: 1px solid rgba(230, 57, 70, 0.15);
+}
+
+
+@media (max-width: 768px) {
+  .foto-profil {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-nama {
+    font-size: 2rem;
+  }
+
+  .judul-section {
+    font-size: 1.8rem;
+  }
+
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-deskripsi {
+    margin: 0 auto;
+  }
+
+  .d-flex.gap-3 {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio - Nama Saya</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <!-- CSS kustom saya -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="app">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+
+
+      <a class="navbar-brand" href="#home">{{ namaDepan }}<span class="dot">.</span></a>
+
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#menuNavbar">
+        <i class="bi bi-list text-white fs-4"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuNavbar">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+ 
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+
+
+        <div class="col-lg-7">
+          <p class="hero-salam">Halo, Saya 👋</p>
+          <h1 class="hero-nama">{{ nama }}</h1>
+          <p class="hero-role">{{ role }}</p>
+          <p class="hero-deskripsi">{{ deskripsiSingkat }}</p>
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="#about" class="btn btn-merah">Tentang Saya</a>
+            <a href="#certificates" class="btn btn-outline-merah">Lihat Sertifikat</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center mt-5 mt-lg-0">
+          <img
+            src="anda.jpeg"
+            alt="Foto Profil Saya"
+            class="foto-profil"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="about" class="about-section">
+    <div class="container">
+
+
+      <div class="text-center mb-5">
+        <p class="label-section">Kenali Saya</p>
+        <h2 class="judul-section">About <span class="merah">Me</span></h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-6">
+          <div class="card-custom">
+            <h5 class="judul-card">
+              <i class="bi bi-person-fill me-2"></i>Deskripsi Diri
+            </h5>
+            <p class="text-muted-custom">{{ deskripsiDiri }}</p>
+
+            <div class="row mt-3 g-2">
+              <div class="col-6" v-for="info in infoPribadi" :key="info.label">
+                <div class="info-box">
+                  <small class="info-label">{{ info.label }}</small>
+                  <p class="info-nilai">{{ info.nilai }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-6">
+          <div class="card-custom">
+            <h5 class="judul-card">
+              <i class="bi bi-code-slash me-2"></i>Skills
+            </h5>
+            
+            <div v-for="skill in skills" :key="skill.nama" class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="skill-nama">{{ skill.nama }}</span>
+                <span class="skill-persen">{{ skill.persen }}%</span>
+              </div>
+              <div class="progress" style="height: 10px; border-radius: 20px;">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  :style="{ width: skill.persen + '%' }"
+                  :aria-valuenow="skill.persen"
+                  aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-12">
+          <div class="card-custom">
+            <h5 class="judul-card">
+              <i class="bi bi-briefcase-fill me-2"></i>Pengalaman
+            </h5>
+            <div class="row g-3">
+
+              <div class="col-md-4" v-for="exp in pengalaman" :key="exp.posisi">
+                <div class="exp-card">
+                  <span class="exp-periode">{{ exp.periode }}</span>
+                  <h6 class="exp-posisi">{{ exp.posisi }}</h6>
+                  <p class="exp-tempat">
+                    <i class="bi bi-building me-1"></i>{{ exp.tempat }}
+                  </p>
+                  <p class="exp-desc">{{ exp.deskripsi }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="certificates" class="cert-section">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <p class="label-section">Pencapaian Saya</p>
+        <h2 class="judul-section">Serti<span class="merah">fikat</span></h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4" v-for="cert in sertifikat" :key="cert.judul">
+          <div class="cert-card">
+
+
+            <div class="cert-ikon">
+              <i :class="cert.ikon + ' fs-1'"></i>
+            </div>
+
+            <div class="cert-isi">
+              <span class="cert-kategori">{{ cert.kategori }}</span>
+              <h6 class="cert-judul">{{ cert.judul }}</h6>
+              <p class="cert-penerbit">
+                <i class="bi bi-building me-1"></i>{{ cert.penerbit }}
+              </p>
+              <p class="cert-tanggal">
+                <i class="bi bi-calendar me-1"></i>{{ cert.tanggal }}
+              </p>
+            </div>
+
+            <div class="cert-bawah">
+              <span class="badge-verified">✔ Verified</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer text-center">
+    <div class="container">
+      <p>© 2026 <strong>{{ nama }}</strong> — Dibuat dengan HTML, CSS, Bootstrap 5 & Vue JS</p>
+    </div>
+  </footer>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+
+   
+        nama: "Yulius Pune",
+        namaDepan: "Rojen ",   
+        role: "Mahasiswa Sistem Informasi 💻",
+        deskripsiSingkat: "Seorang mahasiswa yang tertarik di bidang sistem informasi, basis data, dan pengembangan web. Siap belajar dan berkontribusi.",
+        deskripsiDiri: "Halo! Saya mahasiswa Sistem Informasi yang menyukai dunia teknologi informasi, mulai dari analisis sistem, pengelolaan data, hingga pembuatan aplikasi berbasis web. Saya terus berusaha mengembangkan kemampuan dan memberikan yang terbaik.",
+
+       
+        infoPribadi: [
+          { label: "Nama",        nilai: "Yulius Pune'" },
+          { label: "Asal",        nilai: "Tanjung Selor" },
+          { label: "Nim",         nilai: "2409116110" },
+          { label: "Universitas", nilai: "Universitas Mulawarman" },
+          { label: "Jurusan",     nilai: "Sistem Informasi" },
+          { label: "Angkatan",    nilai: "2024" },
+          { label: "Email",       nilai: "yuliuspune@gmail.com" },
+          { label: "Kota",        nilai: "Samarinda" },
+        ],
+
+        skills: [
+          { nama: "HTML & CSS",       persen: 82 },
+          { nama: "MySQL & Database", persen: 78 },
+          { nama: "Analisis Sistem",  persen: 80 },
+          { nama: "Microsoft Excel",  persen: 85 },
+          { nama: "JavaScript",       persen: 65 },
+          { nama: "PHP",              persen: 60 },
+        ],
+
+       
+        pengalaman: [
+          {
+            periode:   "2025 – Sekarang",
+            posisi:    "Anggota Departement Human Resources Development",
+            tempat:    "INFORSA – Information System Association",
+            deskripsi: "PJ Ceremony Graduation."
+          },
+          {
+            periode:   "2024",
+            posisi:    "Anggota Departement Professional Skill Development",
+            tempat:    "INFORSA – Information System Association",
+            deskripsi: "Pj Bulu Tangkis"
+          },
+          {
+            periode:   "2023",
+            posisi:    "Pelajar",
+            tempat:    "SMKN 02 Tanjung Selor",
+            deskripsi: "Mengikuti kegiatan Belajar Dengan Baik"
+          },
+        ],
+
+        
+        sertifikat: [
+          {
+            ikon:     "bi bi-database",
+            kategori: "Database",
+            judul:    "Belajar Dasar SQL",
+            penerbit: "Dicoding Indonesia",
+            tanggal:  "Januari 2024"
+          },
+          {
+            ikon:     "bi bi-code-square",
+            kategori: "Web Development",
+            judul:    "Belajar Dasar Pemrograman Web",
+            penerbit: "Dicoding Indonesia",
+            tanggal:  "Maret 2024"
+          },
+          {
+            ikon:     "bi bi-diagram-3",
+            kategori: "Analisis Sistem",
+            judul:    "Intro to Systems Analysis",
+            penerbit: "Coursera",
+            tanggal:  "April 2024"
+          },
+          {
+            ikon:     "bi bi-bar-chart-line",
+            kategori: "Data Analytics",
+            judul:    "Google Data Analytics Certificate",
+            penerbit: "Google – Coursera",
+            tanggal:  "Juni 2024"
+          },
+          {
+            ikon:     "bi bi-shield-check",
+            kategori: "Cybersecurity",
+            judul:    "Introduction to Cybersecurity",
+            penerbit: "Cisco Networking Academy",
+            tanggal:  "Agustus 2024"
+          },
+          {
+            ikon:     "bi bi-git",
+            kategori: "Version Control",
+            judul:    "Git & GitHub Fundamentals",
+            penerbit: "Belajar Coding",
+            tanggal:  "Oktober 2024"
+          },
+        ]
+
+      }; 
+    }    
+  }).mount('#app');
+</script>
+
+</body>
+</html>
